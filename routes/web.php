@@ -1,6 +1,7 @@
 <?php
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
+use Illuminate\Support\Facades\View;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +15,12 @@ use GuzzleHttp\Client;
 */
 
 $router->get('/', function () use ($router) {
-    return $router->app->version();
+    return '小小新闻';
+    // return $router->app->version();
+});
+
+$router->get('/privacy-policy', function() {
+    return View::make('privacy-policy');
 });
 
 $router->get('/everything', function(Request $request) {
